@@ -2,4 +2,4 @@ FROM adoptopenjdk:8-jre-hotspot
 ARG JAR_FILE=target/springdockerdemo-1.0.jar
 WORKDIR /opt/
 COPY ${JAR_FILE} spring-boot.jar
-ENTRYPOINT ["mvn spring-boot:run"]
+ENTRYPOINT ["java","-jar","spring-boot.jar"]
