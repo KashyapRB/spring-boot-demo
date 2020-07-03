@@ -1,1 +1,2 @@
-Server.port: 8090
+server:
+  port : 80120
