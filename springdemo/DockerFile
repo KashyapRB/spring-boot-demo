@@ -1,0 +1,4 @@
+FROM adoptopenjdk:8-jre-hotspot
+RUN mkdir /opt/app
+COPY springdockerdemo-1.0.jar /opt/app
+CMD ["java", "-jar", "/opt/app/springdockerdemo-1.0.jar"]
