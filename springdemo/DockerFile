@@ -2,5 +2,5 @@ FROM adoptopenjdk:8-jre-hotspot
 ARG JAR_FILE=/target/springdockerdemo-1.0.jar
 MAINTAINER kashyapRBharath
 WORKDIR /opt/app
-COPY ${JAR_FILE} docker-demo.jar
+COPY ${JAR_FILE} /opt/app/docker-demo.jar
 ENTRYPOINT ["java","-jar","docker-demo.jar"]
