@@ -1,2 +1,2 @@
-server:
-  port : 8090
+Server:
+   port: 8080 
