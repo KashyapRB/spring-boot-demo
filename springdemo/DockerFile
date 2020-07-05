@@ -3,6 +3,8 @@
 #pull base image
 FROM adoptopenjdk:8-jre-hotspot
 
+ENV MAVEN_HOME /usr/share/maven
+
 COPY pom.xml /tmp/
 
 COPY src /tmp/src/
