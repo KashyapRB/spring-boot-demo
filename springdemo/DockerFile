@@ -11,9 +11,7 @@ COPY src /tmp/src/
 
 WORKDIR /tmp/
 
-RUN mvn package
-
-
+CMD ["mvn","package"]
 
 ARG JAR_FILE=/target/springdockerdemo-1.0.jar
 
