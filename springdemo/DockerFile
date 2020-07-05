@@ -1,5 +1,5 @@
 # Maven build container 
-FROM maven:3.5.2-jdk-8-alpine AS maven_build
+FROM maven:3.0.5-openjdk-1.8 AS maven_build
 
 COPY pom.xml /tmp/
 
@@ -26,3 +26,4 @@ COPY ${JAR_FILE} /tmp/docker/docker-demo.jar
 
 #default command
 ENTRYPOINT ["java","-jar","/tmp/docker/docker-demo.jar"]
+
