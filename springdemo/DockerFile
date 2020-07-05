@@ -1,6 +1,28 @@
+# Maven build container 
+FROM maven:3.5.2-jdk-8-alpine AS maven_build
+
+COPY pom.xml /tmp/
+
+COPY src /tmp/src/
+
+WORKDIR /tmp/
+
+RUN mvn package
+
+#pull base image
 FROM adoptopenjdk:8-jre-hotspot
+
 ARG JAR_FILE=/target/springdockerdemo-1.0.jar
+
+#Maintainer 
 MAINTAINER kashyapRBharath
-WORKDIR /opt/app
-COPY ${JAR_FILE} /opt/app/docker-demo.jar
-ENTRYPOINT ["java","-jar","docker-demo.jar"]
+
+#Expose port 8080
+EXPOSE 8080
+WORKDIR /tmp/docker/
+
+#copy docker demo to docker image from builder image
+COPY ${JAR_FILE} /tmp/docker/docker-demo.jar
+
+#default command
+ENTRYPOINT ["java","-jar","/tmp/docker/docker-demo.jar"]
