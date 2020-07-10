@@ -10,4 +10,4 @@ MAINTAINER kashyapRBharath
 EXPOSE 8098
 
 #default command
-ENTRYPOINT ["java","-jar","/tmp/docker/springdockerdemo-1.0.jar"]
+ENTRYPOINT ["java","-jar","springdockerdemo-1.0.jar"]
